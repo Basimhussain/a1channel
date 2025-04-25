@@ -6,6 +6,35 @@ A full-stack product management application with a RESTful API built using Sprin
 
 This project is a comprehensive product management system that allows for storing, retrieving, updating, and deleting products. It features both a sleek, modern web interface using Thymeleaf templates and a RESTful API for programmatic access.
 
+## Screenshots
+
+Here are some screenshots showcasing the application's user interface:
+
+### Home Page
+
+![Home Page](screenshots/home_page.png)
+_Main landing page featuring product management overview_
+
+### Products Page
+
+![Products Page](screenshots/products_page.png)
+_Browse products by category with search functionality_
+
+### Product Listings
+
+![Product Listings](screenshots/product_listings.png)
+_Detailed view of products with actions (view, edit, delete)_
+
+### Add Product Form
+
+![Add Product Form](screenshots/add_product.png)
+_Interface for adding new products to the system_
+
+### Database Connection
+
+![Database Connection](screenshots/database_connection.png)
+_H2 Database configuration interface_
+
 ## Technologies Used
 
 ### Backend
