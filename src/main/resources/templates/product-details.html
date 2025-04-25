@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${product.name + ' - ProductHub'}">
+      Product Details - ProductHub
+    </title>
+    <link rel="stylesheet" th:href="@{/static/css/styles.css}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container header-content">
+        <a href="/dashboard" class="logo">ProductHub</a>
+        <nav>
+          <ul>
+            <li><a href="/dashboard">Products</a></li>
+            <li><a href="#" id="add-product-btn">Add Product</a></li>
+            <li><a href="/h2-console" target="_blank">Database</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="product-detail" th:if="${product != null}">
+        <div class="product-detail-layout">
+          <div class="product-detail-image">
+            <img th:src="${product.imageUrl}" th:alt="${product.name}" />
+          </div>
+          <div class="product-detail-info">
+            <h1 class="product-detail-name" th:text="${product.name}">
+              Product Name
+            </h1>
+            <div class="product-detail-price" th:text="${'$' + product.price}">
+              $99.99
+            </div>
+            <p
+              class="product-detail-description"
+              th:text="${product.description}"
+            >
+              Product description goes here...
+            </p>
+            <div class="product-detail-meta">
+              <div class="meta-item">
+                <span class="meta-label">Category:</span>
+                <span th:text="${product.category}">Category</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Stock Quantity:</span>
+                <span th:text="${product.stockQuantity}">50</span>
+              </div>
+            </div>
+            <div class="product-detail-actions">
+              <a
+                th:href="@{/products/edit/{id}(id=${product.id})}"
+                class="btn-success"
+                >Edit Product</a
+              >
+              <a
+                th:href="@{/products/delete/{id}(id=${product.id})}"
+                class="btn-danger delete-button"
+                >Delete Product</a
+              >
+              <a href="/dashboard" class="btn">Back to Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div th:if="${product == null}" class="error-container">
+        <h2>Product Not Found</h2>
+        <p>The requested product could not be found.</p>
+        <a href="/dashboard" class="btn">Back to Products</a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ProductHub - RESTful API Internship Project</p>
+      </div>
+    </footer>
+
+    <script th:src="@{/static/js/scripts.js}"></script>
+  </body>
+</html>
