@@ -8,7 +8,19 @@ This project is a comprehensive product management system that allows for storin
 
 ## Screenshots
 
-Here are some screenshots showcasing the application's user interface:
+The screenshots directory contains placeholder files. To view actual screenshots of the application:
+
+1. Clone this repository locally
+2. Add your own screenshots to the `/screenshots` directory
+3. Commit and push the changes
+
+The application features the following screens:
+
+- Home Page with product management overview
+- Products Page with category-based filtering and search
+- Product Listings with detailed view and action buttons
+- Add Product Form for creating new products
+- Database Connection configuration interface
 
 ### Home Page
 
